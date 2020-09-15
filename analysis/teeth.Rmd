@@ -1,0 +1,35 @@
+---
+title: "teeth"
+author: "sh1058tsai"
+date: "2020-09-15"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+I am a bit hungry and want to grab some snacks
+```{r import teeth}
+library(readr)
+teeth <- read_csv("data/teeth.csv")
+head(teeth)
+
+```
+
+## Boxplot
+
+now goes to plot it!
+```{r boxplot}
+boxplot(teeth$len~teeth$dose,data=teeth)
+boxplot(teeth$len~teeth$supp,dta=teeth)
+```
+
+## Permutation
+
+```{r permut}
+mean(teeth$len[teeth$supp=='OJ'])-mean(teeth$len[teeth$supp=='VC'])
+supp_perm <- sample(teeth$supp)
+mean(teeth$len[supp_perm=='OJ'])-mean(teeth$len[supp_perm=='VC'])
+```
+
