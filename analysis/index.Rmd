@@ -13,3 +13,5 @@ Welcome to my research website.
 ## link 
 
 * [Teeth growth analysis](teeth.html)
+
+* [Daniel's link here](https://djcsanchez.github.io/myproject/)
